@@ -190,7 +190,7 @@ class ExamplePlugin {
 
   // Validate the provided license key within the scope of the current domain. This
   // sends a JSON request to Keygen's API, but this could also be your own server
-  // which your using to handle licensing and activation, e.g. something like
+  // which you're using to handle licensing and activation, e.g. something like
   // https://github.com/keygen-sh/example-php-activation-server.
   private function validate_license_key($key, $domain) {
     $res = wp_remote_post('https://api.keygen.sh/v1/accounts/' . self::KEYGEN_ACCOUNT . '/licenses/actions/validate-key', [

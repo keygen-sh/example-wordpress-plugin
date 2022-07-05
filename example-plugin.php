@@ -139,7 +139,7 @@ class ExamplePlugin {
     }
 
     if (!$res->meta->valid) {
-      switch ($res->meta->constant) {
+      switch ($res->meta->code) {
         // When the license has been activated, but the current domain is not
         // associated with it, return an error.
         case 'FINGERPRINT_SCOPE_MISMATCH': {
@@ -163,7 +163,7 @@ class ExamplePlugin {
           break;
         }
         // You may want to handle more statuses, depending on your license requirements.
-        // See: https://keygen.sh/docs/api/#licenses-actions-validate-key-constants.
+        // See: https://keygen.sh/docs/api/licenses/#licenses-licenses-actions-validate-key-response-codes-information.
         default: {
           add_settings_error('ex_license', esc_attr('settings_updated'), "Unhandled error: {$res->meta->detail} ({$res->meta->detail})", 'error');
 
